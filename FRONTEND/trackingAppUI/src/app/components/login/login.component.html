@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="left">
+      <h1>Welcome To Smart Tracking</h1>
+    </div>
+    <div class="right">
+      <div class="card">
+        <div class="item1 one">
+          <!-- <label for="">Tenant Id:</label> -->
+          <input type="text" placeholder="Tenant Id" [(ngModel)]="loginData.tenantId">
+        </div>
+        <div class="item1">
+          <!-- <label for="">User Id:</label> -->
+          <input type="text" placeholder="User Id" [(ngModel)]="loginData.userId">
+        </div>
+        <div class="item1">
+          <!-- <label for=""> Password:</label> -->
+          <input type="text" placeholder="Password" [(ngModel)]="loginData.password">
+        </div>
+        <div class="item1">
+          <a (click)="checkLogin()" class="lg">Login</a>
+        </div>
+        <div class="item1">
+          <a routerLink="/forgotPassword">Forgot Password?</a><a routerLink="/signup">Signup</a>
+        </div>
+</div>

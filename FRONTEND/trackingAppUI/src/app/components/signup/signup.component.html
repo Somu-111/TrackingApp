@@ -1,0 +1,76 @@
+<div class="main">
+  <div class="left">
+    <h1 class="lfc">Welcome To Smart Tracking</h1>
+  </div>
+  <div class="right">
+    <div class="card">
+      <div class="item1 rh">
+        <h1>Create Your Account</h1>
+      </div>
+      <form [formGroup]="regForm" (ngSubmit)="checkLogin()">
+        <div class="item1">
+          <input type="text" formControlName="email" placeholder="Email Id" />
+        </div>
+        <div class="text-danger" *ngIf="f['email'].errors?.['required']">
+          <span>Email is required</span>
+        </div>
+        <div class="text-danger" *ngIf="f['email'].errors?.['email']">
+          <span>Enter a valid email</span>
+        </div>
+
+        <div class="item1">
+          <input type="text" formControlName="userName" placeholder="User Name" />
+        </div>
+        <div class="text-danger" *ngIf="f['userName'].errors?.['required']">
+          <span>Username is required</span>
+        </div>
+
+        <div class="item1">
+          <input type="text" formControlName="occupation" placeholder="Occupation" />
+        </div>
+        <div class="text-danger" *ngIf="f['occupation'].errors?.['required']">
+          <span>Occupation is required</span>
+        </div>
+
+        <div class="item1">
+          <input type="text" formControlName="companyName" placeholder="Company Name (Optional)" />
+        </div>
+
+        <div class="item1">
+          <input type="text" formControlName="contactNo" placeholder="Contact No (Optional)" />
+        </div>
+
+        <div class="item1">
+          <input type="password" formControlName="password" placeholder="Password" />
+        </div>
+        <div class="pass">
+          Your password must be 8-16 characters long and include at least one letter, one number, and one special character.
+        </div>
+        <div class="text-danger" *ngIf="f['password'].errors?.['required']">
+          <span>Password is required</span>
+        </div>
+        <div class="text-danger" *ngIf="f['password'].errors?.['minlength']">
+          <span>Password must be at least 8 characters long</span>
+        </div>
+        <div class="text-danger" *ngIf="f['password'].errors?.['pattern']">
+          <span>Password must contain a letter, number, and special character</span>
+        </div>
+
+        <div class="item1">
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" />
+        </div>
+        <div class="text-danger" *ngIf="regForm.hasError('mismatch')">
+          <span>Passwords do not match</span>
+        </div>
+
+        <div class="item1">
+          <button type="submit" class="lg">Signup</button>
+        </div>
+      </form>
+      <div class="item1">
+        <a routerLink="/forgotPassword">Forgot Password?</a>
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
